@@ -1,4 +1,4 @@
-# laravel_quiz
+# simple laravel quiz app
 
 A new Flutter project.
 
