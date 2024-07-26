@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:laravel_quiz/quiz_question.dart';
 
 const questions = [
@@ -86,10 +87,11 @@ const questions = [
   QuizQuestion(
     'How do you define an accessor for an Eloquent model attribute in Laravel?',
     [
-      'By defining a method with the prefix get and suffix Attribute',
-      'By defining a method with the prefix fetch and suffix Property',
-      'By defining a method with the prefix find and suffix Attribute',
-      'By defining a method with the prefix obtain and suffix Field',
+      'Method with prefix get and suffix Attribute',
+      'Method with prefix fetch and suffix Property',
+      'Method with prefix find and suffix Attribute',
+      'Method with prefix obtain and suffix Field',
     ],
   ),
+
 ];

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:laravel_quiz/home.dart';
 import 'package:laravel_quiz/quizzes.dart';
 import 'package:laravel_quiz/questions/questions.dart';
+import 'package:laravel_quiz/result_quiz.dart';
 
 const startAlign = Alignment.topCenter;
 const endAlign = Alignment.bottomCenter;
@@ -30,10 +31,16 @@ class _MainQuiz extends State<MainQuiz> {
 
     if (selectedAnswer.length == questions.length) {
       setState(() {
-        currentScreen = 'start-screen';
-        selectedAnswer = [];
+        currentScreen = 'result-screen';
       });
     }
+  }
+
+  void onRestart() {
+    setState(() {
+      currentScreen = 'main-quizzes';
+      selectedAnswer = [];
+    });
   }
 
   @override
@@ -46,8 +53,10 @@ class _MainQuiz extends State<MainQuiz> {
     Widget showScreen = Home(startQuiz);
 
     if (currentScreen == 'quizzes-screen') {
-      showScreen = Quizzes(userAnswer: userAnswer,);
-    } else if (currentScreen == 'start-screen') {
+      showScreen = Quizzes(userAnswer: userAnswer);
+    } else if (currentScreen == 'result-screen') {
+      showScreen = ResultQuiz(answers: selectedAnswer, onRestart: onRestart);
+    } else if (currentScreen == 'main-quizzes') {
       showScreen = Home(startQuiz);
     }
 
